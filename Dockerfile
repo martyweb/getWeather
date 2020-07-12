@@ -1,11 +1,11 @@
 FROM python:3
-ENV zip
-ENV appid
-ENV influxdbhost
-ENV influxdbport
-ENV influxdbusername
-ENV influxdbpass
-ENV influxdbdatabase
+ENV zip=0
+ENV appid=''
+ENV influxdbhost=''
+ENV influxdbport=''
+ENV influxdbusername=''
+ENV influxdbpass=''
+ENV influxdbdatabase=''
 
 WORKDIR /usr/src/app
 
