@@ -17,8 +17,6 @@ parser.add_argument('-p', '--influxdbpass', required=True, help='Influxdb pass')
 parser.add_argument('-d', '--influxdbdatabase', required=True, help='Influxdb database name')
 
 args = parser.parse_args()
-print(args.accumulate(args.influxdbdatabase))
-exit
 
 url = "https://api.openweathermap.org/data/2.5/weather?zip="+args.zip+"&APPID="+args.appid+"&units=imperial"
 response = requests.request("GET", url)
