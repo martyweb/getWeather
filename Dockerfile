@@ -2,7 +2,7 @@ FROM python:3
 ENV zip=0
 ENV appid=""
 ENV influxdbhost=""
-ENV influxdbport=""
+ENV influxdbport="8086"
 ENV influxdbusername=""
 ENV influxdbpass=""
 ENV influxdbdatabase=""
