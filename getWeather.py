@@ -2,6 +2,7 @@ import requests
 import json
 import argparse
 from influxdb import InfluxDBClient
+from influxdb.client import InfluxDBClientError
 
 #--------------------------------------------------------
 #Get weather information from openweather
@@ -38,6 +39,11 @@ json_body = [
             ]
 
 client = InfluxDBClient(host=args.influxdbhost, port=args.influxdbport, username=args.influxdbusername, password=args.influxdbpass,database=args.influxdbdatabase)
-response = client.write_points(json_body)
 
-print(response)
+
+try:
+        response = client.write_points(json_body)
+        print("Client responded with: ", response)
+except InfluxDBClientError as e:
+        print(e.content)
+

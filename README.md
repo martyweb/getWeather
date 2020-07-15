@@ -3,7 +3,9 @@ Get weather from openweathermap.org using a zip code and then send data to influ
 
 # Build
 git clone https://github.com/martyweb/getWeather.git
+
 cd getWeather
+
 sudo docker build -t getweather .
 
 # Run
