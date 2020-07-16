@@ -23,6 +23,9 @@ url = "https://api.openweathermap.org/data/2.5/weather?zip="+args.zip+"&APPID="+
 response = requests.request("GET", url)
 json_data = json.loads(response.text)
 
+json_data["main"]['temp_max'] = int(json_data["main"]['temp_max'])
+json_data["main"]['temp_min'] = int(json_data["main"]['temp_min'])
+
 #--------------------------------------------------------
 #post data to influxdb
 #--------------------------------------------------------
