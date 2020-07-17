@@ -5,7 +5,7 @@ ENV influxdbhost=""
 ENV influxdbport="8086"
 ENV influxdbusername=""
 ENV influxdbpass=""
-ENV influxdbdatabase=""
+ENV influxdbdatabase="weather"
 
 WORKDIR /usr/src/app
 
