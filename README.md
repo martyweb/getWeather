@@ -1,14 +1,16 @@
 # getWeather
-Get weather from openweathermap.org using a zip code and then send data to influxdb
+Get weather data from [openweathermap.org](http://www.openweathermap.org) using a zipcode and then send data to influxdb
 
 # Build
+```bash
 git clone https://github.com/martyweb/getWeather.git
-
 cd getWeather
-
 sudo docker build -t getweather .
+```
 
 # Run
+
+```bash
 docker run  \
 --name getWeather \
 -e zip=<zipcode> \
@@ -19,3 +21,4 @@ docker run  \
 -e influxdbpass="<password>" \
 -e influxdbdatabase="weather" \
 getweather
+```
