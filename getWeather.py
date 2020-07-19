@@ -33,7 +33,7 @@ json_body = [
             {
                         "measurement": "main",
                                 "tags": {
-                                                "zip": zip,
+                                                "zip": args.zip,
                                                             "timezone":json_data["timezone"],
                                                                         "name":json_data["name"]
                                                                                 },
@@ -46,7 +46,10 @@ client = InfluxDBClient(host=args.influxdbhost, port=args.influxdbport, username
 
 try:
         response = client.write_points(json_body)
-        print("Client responded with: ", response)
+        print("Json sent: ", (json_body))
+        print("InfluxDB response: ", response)
+        exit(0)
+
 except InfluxDBClientError as e:
         print(e.content)
 
